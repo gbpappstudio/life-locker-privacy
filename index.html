@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Life Locker — Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0; padding: 2.5rem 1.25rem 4rem;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 44rem; margin-inline: auto;
+    color: #262b32; background: #f6f2eb;
+  }
+  h1 { font-size: 1.6rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.15rem; margin: 2rem 0 .5rem; }
+  .updated { color: #9a917f; margin: 0 0 2rem; }
+  a { color: #b8763f; }
+  code { background: rgba(0,0,0,.06); padding: .1em .35em; border-radius: 4px; font-size: .9em; }
+  strong { color: #96551f; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e4dc; background: #16191d; }
+    .updated { color: #8b95a0; }
+    a { color: #d9a265; }
+    code { background: rgba(255,255,255,.08); }
+    strong { color: #e8bc8a; }
+  }
+</style>
+</head>
+<body>
+<h1>Life Locker — Privacy Policy</h1>
+<p class="updated">Last updated: 1 September 2026</p>
+
+<p>Life Locker is a completely offline document vault for Android. This policy explains, in plain
+language, what happens to your information. The short version: <strong>nothing you put into Life
+Locker ever leaves your device unless you personally export a backup file and share it.</strong></p>
+
+<h2>What we collect</h2>
+<p><strong>Nothing.</strong> Life Locker has no account system, no analytics, no crash reporting,
+and no advertising. The app is built without the Android <code>INTERNET</code> permission, so it is
+technically incapable of transmitting anything off your device over the network.</p>
+
+<h2>What you store, and where it lives</h2>
+<p>Documents, photos, the people you organise them under, categories, tags, expiry dates and asset
+details are stored <strong>only on your device</strong>, inside Life Locker's private app storage:</p>
+<ul>
+  <li>The database is encrypted with <strong>SQLCipher (AES-256)</strong>.</li>
+  <li>Each imported file is separately encrypted with <strong>AES-256-GCM</strong>, under a key held
+    in the Android hardware-backed Keystore.</li>
+  <li>Access is gated by a <strong>PIN</strong> you choose (stored only as a salted
+    PBKDF2-HMAC-SHA256 hash, never in the clear) and, optionally, your device biometric.</li>
+</ul>
+<p>We have no server, so we never receive, see, or store any of this.</p>
+
+<h2>Backups</h2>
+<p>If you choose <em>Settings &rarr; Backup &amp; restore &rarr; Export backup</em>, Life Locker
+writes a single password-protected, AES-256-GCM-encrypted <code>.llbackup</code> file to a location
+<em>you</em> select. From that point the file is under your control and subject to the terms of
+wherever you saved or sent it. Life Locker cannot read it back without the password you set, and
+neither can we.</p>
+
+<h2>Purchases</h2>
+<p>The optional one-time "unlock unlimited" purchase is processed entirely by <strong>Google Play
+Billing</strong>. Life Locker never sees your payment details. Google's handling of that transaction
+is covered by the
+<a href="https://payments.google.com/legaldocument?family=0.privacynotice&amp;hl=en">Google Payments
+Privacy Notice</a>. The only thing stored on your device as a result is a local flag recording that
+the unlock is active.</p>
+
+<h2>Permissions</h2>
+<ul>
+  <li><strong>Notifications</strong> (optional): used solely for local, on-device reminders that a
+    document in your vault is approaching its expiry date. Nothing is sent anywhere.</li>
+  <li><strong>No internet, no location, no contacts, no background network</strong> — none of these
+    are requested.</li>
+</ul>
+
+<h2>Children</h2>
+<p>Life Locker is a general-purpose utility and is not directed at children. It collects no data
+from anyone.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the "last updated" date above changes with it. Because the app is
+offline, material changes will accompany an app update.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <strong>REPLACE_WITH_CONTACT_EMAIL</strong></p>
+</body>
+</html>
