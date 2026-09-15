@@ -32,10 +32,13 @@
   }
   h1 { font-size: 1.6rem; margin: 0 0 .25rem; }
   h2 { font-size: 1.15rem; margin: 2rem 0 .5rem; }
+  h3 { font-size: 1rem; margin: 1.5rem 0 .5rem; }
   .updated { color: #9a917f; margin: 0 0 2rem; }
   a { color: #b8763f; }
   code { background: rgba(0,0,0,.06); padding: .1em .35em; border-radius: 4px; font-size: .9em; }
   strong { color: #96551f; }
+  ul { padding-left: 1.3rem; }
+  li { margin: .3rem 0; }
   @media (prefers-color-scheme: dark) {
     body { color: #e8e4dc; background: #16191d; }
     .updated { color: #8b95a0; }
@@ -54,69 +57,179 @@
   <div class="tagline">SECURE, ORGANIZE, INHERIT</div>
 </div>
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: 5 September 2026</p>
+<p class="updated">Last updated: 15 September 2026</p>
 
-<p>Life Locker is a completely offline document vault for Android. This policy explains, in plain
-language, what happens to your information. The short version: <strong>nothing you put into Life
-Locker ever leaves your device unless you personally export a backup file and share it.</strong></p>
+<p>Life Locker is a completely offline document vault for Android, designed to help individuals
+and families securely preserve important information, organize personal records, and pass
+essential documents to future generations.</p>
+
+<p>This policy explains, in plain language, what happens to your information when you use the
+app.</p>
+
+<p><strong>The short version:</strong> nothing you put into Life Locker ever leaves your device
+unless you personally export a backup file and choose to share it.</p>
+
+<p>Life Locker is designed to function entirely offline. The app does not contain the Android
+<code>INTERNET</code> permission and cannot connect to online services, cloud storage providers,
+analytics platforms, advertising networks, or developer servers. The developer does not collect,
+share, sell, transmit, or store any user data.</p>
 
 <h2>What we collect</h2>
-<p><strong>Nothing.</strong> Life Locker has no account system, no analytics, no crash reporting,
-and no advertising. The app is built without the Android <code>INTERNET</code> permission, so it is
-technically incapable of transmitting anything off your device over the network.</p>
-
-<h2>What you store, and where it lives</h2>
-<p>Documents, photos, the people you organise them under, categories, tags, expiry dates, asset
-details and your family tree are stored <strong>only on your device</strong>, inside Life Locker's
-private app storage:</p>
+<p><strong>Nothing.</strong> Life Locker has:</p>
 <ul>
-  <li>The database is encrypted with <strong>SQLCipher (AES-256)</strong>.</li>
-  <li>Each imported file is separately encrypted with <strong>AES-256-GCM</strong>, under a key held
-    in the Android hardware-backed Keystore.</li>
-  <li>Access is gated by a <strong>PIN</strong> you choose (stored only as a salted
-    PBKDF2-HMAC-SHA256 hash, never in the clear) and, optionally, your device biometric.</li>
+  <li>No user accounts</li>
+  <li>No analytics</li>
+  <li>No crash reporting</li>
+  <li>No advertising</li>
+  <li>No tracking technologies</li>
+  <li>No developer servers</li>
 </ul>
-<h3>Family tree</h3>
-<p>The family tree feature records details about <strong>other people</strong> — their names,
-gender, dates of birth and death, how they are related to one another, and optionally a photo of
-each. Most of them will never use this app, and some will have died. That information is treated
-exactly like the rest of your vault: encrypted on your device, never transmitted, and never seen by
-us. It leaves your device only inside a backup file you export and share yourself. You can edit or
-delete any entry at any time from the Family Tree screen.</p>
+<p>Because the app is built without the Android <code>INTERNET</code> permission, it is
+technically incapable of transmitting information off your device over a network.</p>
 
-<p>We have no server, so we never receive, see, or store any of this.</p>
+<h2>Features and stored information</h2>
+<p>Depending on which features you use, Life Locker may store:</p>
+<ul>
+  <li>Documents and scanned documents</li>
+  <li>Photos and images</li>
+  <li>Family member profiles</li>
+  <li>Family tree records</li>
+  <li>Categories and folders</li>
+  <li>Tags and other metadata</li>
+  <li>Asset information and declared values</li>
+  <li>Expiry dates</li>
+  <li>Application preferences, such as your chosen theme</li>
+</ul>
+<p>All of it remains encrypted and stored only on your device, inside Life Locker's private app
+storage.</p>
+
+<h2>How your information is protected</h2>
+<ol>
+  <li>The database is encrypted with <strong>SQLCipher (AES-256)</strong>.</li>
+  <li>Every imported file is individually encrypted with <strong>AES-256-GCM</strong>, under a key
+    held in the Android hardware-backed Keystore whenever the device supports it.</li>
+  <li>Access to the vault is protected by a <strong>PIN</strong> you choose, stored only as a
+    salted <strong>PBKDF2-HMAC-SHA256</strong> hash and never in plain text.</li>
+  <li>Optional biometric authentication may be used for convenience, subject to your device's own
+    security capabilities.</li>
+</ol>
+<p>All encryption and security operations happen locally on your device.</p>
+
+<h2>Person-based vault</h2>
+<p>Life Locker organizes information around the people it belongs to, rather than around folders
+alone. You may create a profile for each family member and file documents, photos, assets and
+expiry-tracked records under that profile. Profile information is encrypted and stored only on
+your device.</p>
+
+<h2>Folders and categories</h2>
+<p>Life Locker supports categories and nested folders for organizing your vault. Folder
+structures, category names, and related metadata stay inside your encrypted vault and are never
+transmitted anywhere.</p>
+
+<h2>Document scanning</h2>
+<p>Life Locker includes a document-scanning feature for creating digital copies of paper
+documents. Scanning is initiated only when you choose to use it, and the resulting scan is
+protected by the same encryption as the rest of your vault. Life Locker does not upload scanned
+documents or store them anywhere but your device.</p>
+<p>Scanning is handled by Google Play Services' own document-scanner component, which manages
+camera access in its own separate process — Life Locker itself does not request the Android
+camera permission directly.</p>
+
+<h2>Search</h2>
+<p>Life Locker can search across document titles, tags, categories, and people already in your
+vault. Every search runs live, entirely on your device, against your existing encrypted data —
+nothing is transmitted or shared.</p>
+
+<h2>Expiry tracking</h2>
+<p>You may record expiry dates for documents such as passports, licenses, insurance policies, and
+certificates. Expiry calculations and reminders are performed entirely on your device, and no
+expiry information is transmitted anywhere.</p>
+
+<h2>Asset register</h2>
+<p>The Asset Register lets you keep records of valuables and important assets, including
+supporting documents and declared values. All of it is encrypted and stored only on your
+device.</p>
+
+<h2>Photo Bank</h2>
+<p>The Photo Bank stores versioned personal photographs for the three purposes it's built for:</p>
+<ul>
+  <li>Passport photo</li>
+  <li>Signature</li>
+  <li>Stamp-size photo</li>
+</ul>
+<p>All Photo Bank images are encrypted and stored locally inside your vault.</p>
+
+<h2>Family tree information</h2>
+<p>The Family Tree feature lets you record information about other individuals, including:</p>
+<ul>
+  <li>Names</li>
+  <li>Gender</li>
+  <li>Dates of birth</li>
+  <li>Dates of death</li>
+  <li>Relationships between family members</li>
+  <li>Optional photographs</li>
+</ul>
+<p>This information is treated exactly like the rest of your vault: encrypted on your device,
+never transmitted anywhere, and never seen by the developer. It leaves your device only if you
+choose to export a backup and share it yourself. You can edit or delete any entry at any time from
+the Family Tree screen.</p>
+<p>Because Life Locker operates entirely offline, the developer never receives, accesses, or
+stores any of this information. You are responsible for ensuring you have any permissions
+required under applicable law before storing information about other individuals.</p>
+
+<h2>Trash and recovery</h2>
+<p>When you delete an item, it's typically moved to Trash first and kept there for up to 30 days
+before permanent removal, so a deletion can be undone. Items in Trash remain encrypted and stored
+only on your device during that period. You can permanently delete anything from Trash at any
+time.</p>
 
 <h2>Backups</h2>
 <p>If you choose <em>Settings &rarr; Backup &amp; restore &rarr; Export backup</em>, Life Locker
-writes a single password-protected, AES-256-GCM-encrypted <code>.llbackup</code> file to a location
-<em>you</em> select. From that point the file is under your control and subject to the terms of
-wherever you saved or sent it. Life Locker cannot read it back without the password you set, and
-neither can we.</p>
+writes a single password-protected <code>.llbackup</code> file, encrypted with AES-256-GCM, to a
+location <em>you</em> select.</p>
+<p>Once exported, that file is under your control and subject to the privacy and security
+practices of wherever you choose to store or share it — cloud storage, messaging apps, email, or
+external storage. Life Locker cannot read the file back without the password you set, and neither
+can we.</p>
+
+<h2>PIN and backup password recovery</h2>
+<p>Life Locker cannot recover your PIN, your backup password, or your encrypted vault data.
+Encryption keys never leave your device, so there is no password-recovery service to offer.
+Please keep your PIN and any backup password somewhere safe.</p>
 
 <h2>Purchases</h2>
-<p>The optional one-time "unlock unlimited" purchase is processed entirely by <strong>Google Play
-Billing</strong>. Life Locker never sees your payment details. Google's handling of that transaction
-is covered by the
-<a href="https://payments.google.com/legaldocument?family=0.privacynotice&amp;hl=en">Google Payments
-Privacy Notice</a>. The only thing stored on your device as a result is the encrypted Google Play
-purchase receipt, kept in the Android Keystore and used locally to confirm the unlock is genuine.
-It is never transmitted anywhere.</p>
+<p>The optional one-time "Unlock Unlimited" purchase is processed entirely by Google Play Billing.
+Life Locker never receives or stores your credit card information, banking details, or payment
+credentials. Google's handling of the transaction itself is covered by the
+<a href="https://payments.google.com/legaldocument?family=0.privacynotice&amp;hl=en">Google
+Payments Privacy Notice</a>.</p>
+<p>The only purchase-related information Life Locker stores is an encrypted Google Play purchase
+receipt, kept locally in the Android Keystore and used solely to confirm the unlock is genuine. It
+is never transmitted anywhere.</p>
 
 <h2>Permissions</h2>
-<ul>
-  <li><strong>Notifications</strong> (optional): used solely for local, on-device reminders that a
-    document in your vault is approaching its expiry date. Nothing is sent anywhere.</li>
-  <li><strong>No internet, no location, no contacts, no background network</strong> — none of these
-    are requested.</li>
-</ul>
+<p><strong>Notifications (optional).</strong> Life Locker may ask permission to show
+notifications, used only for local, on-device reminders — for example, that a document in your
+vault is approaching its expiry date. No notification data is transmitted anywhere.</p>
+<p><strong>Not requested:</strong> internet access, location access, contacts access, camera
+access (see Document Scanning above), advertising identifiers, or background network access. Life
+Locker is designed to operate entirely offline.</p>
 
-<h2>Children</h2>
-<p>Life Locker is a general-purpose utility and is not directed at children. It collects no data
-from anyone.</p>
+<h2>Themes and preferences</h2>
+<p>Life Locker offers Light, Dark, and System theme options. Your choice, like every other app
+preference, is stored only on your device.</p>
 
-<h2>Changes</h2>
-<p>If this policy changes, the "last updated" date above changes with it. Because the app is
-offline, material changes will accompany an app update.</p>
+<h2>Children's privacy</h2>
+<p>Life Locker is a general-purpose utility and is not directed at children. It collects no
+personal information from anyone, including children.</p>
+
+<h2>Data sharing</h2>
+<p>Life Locker does not collect, share, sell, rent, or transmit data to third parties. Everything
+stays on your device unless you explicitly export and share a backup file.</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the "last updated" date above changes with it. Because Life Locker is
+offline, a material change will generally be communicated through an app update.</p>
 
 <h2>Contact</h2>
 <p>Questions about this policy: <a href="mailto:gbpappstudio@gmail.com">gbpappstudio@gmail.com</a></p>
