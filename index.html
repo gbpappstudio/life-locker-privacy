@@ -57,7 +57,7 @@
   <div class="tagline">SECURE, ORGANIZE, INHERIT</div>
 </div>
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: 15 September 2026</p>
+<p class="updated">Last updated: 23 September 2026</p>
 
 <p>Life Locker is a completely offline document vault for Android, designed to help individuals
 and families securely preserve important information, organize personal records, and pass
@@ -98,6 +98,10 @@ technically incapable of transmitting information off your device over a network
   <li>Tags and other metadata</li>
   <li>Asset information and declared values</li>
   <li>Expiry dates</li>
+  <li>Notes and checklists</li>
+  <li>Standalone reminders (birthdays, anniversaries, and one-off dates)</li>
+  <li>Saved logins (site name, username, password, an optional transaction password and PIN, URL, and
+  notes) for the optional Password Manager</li>
   <li>Application preferences, such as your chosen theme</li>
 </ul>
 <p>All of it remains encrypted and stored only on your device, inside Life Locker's private app
@@ -145,6 +149,17 @@ nothing is transmitted or shared.</p>
 certificates. Expiry calculations and reminders are performed entirely on your device, and no
 expiry information is transmitted anywhere.</p>
 
+<h2>Notes</h2>
+<p>You may create text or checklist notes, optionally linking one to a person or a document
+already in your vault (for example, a note about where a physical original is kept). Notes are
+encrypted and stored only on your device. An optional one-time reminder for a note is scheduled
+and delivered entirely on-device, the same as expiry reminders below.</p>
+
+<h2>Reminders</h2>
+<p>Alongside expiry tracking, Life Locker lets you record standalone reminders for birthdays,
+anniversaries, and other one-off dates. These are stored and scheduled entirely on your device; no
+reminder information is transmitted anywhere.</p>
+
 <h2>Asset register</h2>
 <p>The Asset Register lets you keep records of valuables and important assets, including
 supporting documents and declared values. All of it is encrypted and stored only on your
@@ -158,6 +173,37 @@ device.</p>
   <li>Stamp-size photo</li>
 </ul>
 <p>All Photo Bank images are encrypted and stored locally inside your vault.</p>
+<p><strong>Resize for upload</strong> (a Premium Trial feature — see below) lets you reframe a
+Photo Bank photo to a preset size for a specific visa or passport portal, entirely on-device using
+standard image processing. It also offers an optional <strong>"Remove background"</strong> tool
+that replaces a photo's background with a plain colour (white, light grey, or off-white, depending
+on which the selected portal preset allows) — this runs an on-device subject-detection model that
+ships inside the app itself, with no server, network request, or download involved, and is off
+unless you turn it on. The resized image is saved back into your encrypted Photo Bank as a new
+entry; nothing is uploaded anywhere by this feature itself — you choose separately whether and
+where to share the result.</p>
+
+<h2>Password Manager and Autofill</h2>
+<p>Life Locker includes an optional Password Manager for saving logins (site name, username,
+password, an optional transaction password and PIN — useful for accounts like bank logins that
+split these into separate secrets, URL, and notes), a password generator, and integration with
+Android's own Autofill framework so a saved login can be offered when you sign in to another app
+or website.</p>
+<ul>
+  <li>Saved logins are stored in your encrypted, on-device vault, the same as every other kind of
+    record in Life Locker, and are never transmitted anywhere.</li>
+  <li><strong>Filling</strong> a saved password always requires a fresh PIN or biometric check at
+    the moment of use — being unlocked elsewhere in the app, or the phone itself being unlocked,
+    is never enough on its own.</li>
+  <li><strong>Saving</strong> a new login you type into another app works the same way Android's
+    own "Save password?" prompt does in any password manager, and stores it the same way as
+    above.</li>
+  <li>Autofill is off by default. You turn it on yourself, through Android's own system settings,
+    and can turn it off the same way at any time.</li>
+  <li>Matching a saved login to the app or website asking for one happens entirely on-device, by
+    comparing domains — no account, server, or network request is involved anywhere in this
+    feature.</li>
+</ul>
 
 <h2>Family tree information</h2>
 <p>The Family Tree feature lets you record information about other individuals, including:</p>
@@ -197,6 +243,27 @@ can we.</p>
 Encryption keys never leave your device, so there is no password-recovery service to offer.
 Please keep your PIN and any backup password somewhere safe.</p>
 
+<h2>Free trial for Password Manager and Resize for upload</h2>
+<p>These two features are free to use for a limited time from the first time you open Life Locker
+on your device, after which they fold into the same one-time purchase described below. To
+determine when that trial period began — and to stop it being reset simply by uninstalling and
+reinstalling the app — Life Locker checks the earliest of up to three signals, all of them
+entirely on-device:</p>
+<ol>
+  <li>A timestamp stored in the app's own private storage.</li>
+  <li>A small marker file the app writes to your device's regular Downloads folder the first time
+    it runs, using Android's standard file-storage API. This requires no special permission and is
+    not hidden — you can see it in a file manager like any other file — and it exists solely so a
+    plain uninstall-and-reinstall on the same device can't be used to repeatedly reset the trial.
+    It contains nothing but this one timestamp: no other information about you, your vault, or
+    your device.</li>
+  <li>If you restore a <code>.llbackup</code> file, that backup's own recorded start date, so
+    restoring your real vault on a new device doesn't unfairly reset the trial either.</li>
+</ol>
+<p>None of this involves a server, an account, or any network request — it never leaves your
+device except inside a <code>.llbackup</code> file you yourself choose to export and share, in
+which case it's covered by the same protections described under Backups above.</p>
+
 <h2>Purchases</h2>
 <p>The optional one-time "Unlock Unlimited" purchase is processed entirely by Google Play Billing.
 Life Locker never receives or stores your credit card information, banking details, or payment
@@ -211,8 +278,13 @@ is never transmitted anywhere.</p>
 <p><strong>Notifications (optional).</strong> Life Locker may ask permission to show
 notifications, used only for local, on-device reminders — for example, that a document in your
 vault is approaching its expiry date. No notification data is transmitted anywhere.</p>
+<p><strong>Autofill (optional, off by default).</strong> You may turn on Life Locker as an Autofill
+service through Android's own system settings, so it can offer a saved login in other apps — see
+Password Manager and Autofill above. Nothing about this requires a special Android permission, and
+it stays off until you turn it on yourself.</p>
 <p><strong>Not requested:</strong> internet access, location access, contacts access, camera
-access (see Document Scanning above), advertising identifiers, or background network access. Life
+access (see Document Scanning above), advertising identifiers, storage access (see the trial
+marker file above, which uses a permission-free system API), or background network access. Life
 Locker is designed to operate entirely offline.</p>
 
 <h2>Themes and preferences</h2>
