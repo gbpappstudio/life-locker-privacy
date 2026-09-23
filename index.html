@@ -246,20 +246,18 @@ Please keep your PIN and any backup password somewhere safe.</p>
 <h2>Free trial for Password Manager and Resize for upload</h2>
 <p>These two features are free to use for a limited time from the first time you open Life Locker
 on your device, after which they fold into the same one-time purchase described below. To
-determine when that trial period began — and to stop it being reset simply by uninstalling and
-reinstalling the app — Life Locker checks the earliest of up to three signals, all of them
-entirely on-device:</p>
+determine when that trial period began, Life Locker uses the earlier of two dates, both kept on
+your device:</p>
 <ol>
   <li>A timestamp stored in the app's own private storage.</li>
-  <li>A small marker file the app writes to your device's regular Downloads folder the first time
-    it runs, using Android's standard file-storage API. This requires no special permission and is
-    not hidden — you can see it in a file manager like any other file — and it exists solely so a
-    plain uninstall-and-reinstall on the same device can't be used to repeatedly reset the trial.
-    It contains nothing but this one timestamp: no other information about you, your vault, or
-    your device.</li>
   <li>If you restore a <code>.llbackup</code> file, that backup's own recorded start date, so
     restoring your real vault on a new device doesn't unfairly reset the trial either.</li>
 </ol>
+<p>Earlier versions of Life Locker also wrote a small marker file to your Downloads folder, named
+<code>life_locker_trial_anchor.txt</code>. It held only that one timestamp. Life Locker no longer
+writes it, and deletes the copy the current installation made. A copy left by an earlier
+installation of the app can't be removed by the app itself, so you can delete it from your
+Downloads folder if you find one.</p>
 <p>None of this involves a server, an account, or any network request — it never leaves your
 device except inside a <code>.llbackup</code> file you yourself choose to export and share, in
 which case it's covered by the same protections described under Backups above.</p>
@@ -283,9 +281,8 @@ service through Android's own system settings, so it can offer a saved login in 
 Password Manager and Autofill above. Nothing about this requires a special Android permission, and
 it stays off until you turn it on yourself.</p>
 <p><strong>Not requested:</strong> internet access, location access, contacts access, camera
-access (see Document Scanning above), advertising identifiers, storage access (see the trial
-marker file above, which uses a permission-free system API), or background network access. Life
-Locker is designed to operate entirely offline.</p>
+access (see Document Scanning above), advertising identifiers, storage access, or background
+network access. Life Locker is designed to operate entirely offline.</p>
 
 <h2>Themes and preferences</h2>
 <p>Life Locker offers Light, Dark, and System theme options. Your choice, like every other app
