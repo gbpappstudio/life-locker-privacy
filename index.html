@@ -57,7 +57,7 @@
   <div class="tagline">SECURE, ORGANIZE, INHERIT</div>
 </div>
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: 23 September 2026</p>
+<p class="updated">Last updated: 26 September 2026</p>
 
 <p>Life Locker is a completely offline document vault for Android, designed to help individuals
 and families securely preserve important information, organize personal records, and pass
@@ -141,8 +141,9 @@ camera permission directly.</p>
 
 <h2>Search</h2>
 <p>Life Locker can search across document titles, tags, categories, and people already in your
-vault. Every search runs live, entirely on your device, against your existing encrypted data —
-nothing is transmitted or shared.</p>
+vault, and across your notes, reminders, and saved logins (by site name, username, and address;
+never by the password itself). Every search runs live, entirely on your device, against your
+existing encrypted data — nothing is transmitted or shared.</p>
 
 <h2>Expiry tracking</h2>
 <p>You may record expiry dates for documents such as passports, licenses, insurance policies, and
@@ -174,12 +175,14 @@ device.</p>
 </ul>
 <p>All Photo Bank images are encrypted and stored locally inside your vault.</p>
 <p><strong>Resize for upload</strong> (a Premium Trial feature — see below) lets you reframe a
-Photo Bank photo to a preset size for a specific visa or passport portal, entirely on-device using
-standard image processing. It also offers an optional <strong>"Remove background"</strong> tool
-that replaces a photo's background with a plain colour (white, light grey, or off-white, depending
-on which the selected portal preset allows) — this runs an on-device subject-detection model that
-ships inside the app itself, with no server, network request, or download involved, and is off
-unless you turn it on. The resized image is saved back into your encrypted Photo Bank as a new
+Photo Bank photo to a preset size for a specific visa or passport portal. All of its processing
+runs on your device. To place the head where the chosen size requires, it looks for the face in the
+photo when you open it; this uses Google Play Services' face-detection component, which Google Play
+downloads to your phone (as it does the document scanner above) and which runs on the device, so
+the photo is never sent anywhere. It also offers an optional <strong>"Remove background"</strong>
+tool that replaces a photo's background with a plain colour (white, light grey, or off-white,
+depending on which the selected portal preset allows) — this runs a subject-detection model that
+ships inside the app itself, and is off unless you turn it on. The resized image is saved back into your encrypted Photo Bank as a new
 entry; nothing is uploaded anywhere by this feature itself — you choose separately whether and
 where to share the result.</p>
 
@@ -198,6 +201,11 @@ or website.</p>
   <li><strong>Saving</strong> a new login you type into another app works the same way Android's
     own "Save password?" prompt does in any password manager, and stores it the same way as
     above.</li>
+  <li><strong>Showing</strong> a saved password, transaction password, or PIN on screen, including
+    while editing a login, also requires a PIN or biometric check.</li>
+  <li><strong>Copying</strong> a password marks it as sensitive, so Android hides it from clipboard
+    previews and keyboard clipboard history, and Life Locker clears it from the clipboard after 45
+    seconds unless you've copied something else since.</li>
   <li>Autofill is off by default. You turn it on yourself, through Android's own system settings,
     and can turn it off the same way at any time.</li>
   <li>Matching a saved login to the app or website asking for one happens entirely on-device, by
@@ -232,7 +240,10 @@ time.</p>
 <h2>Backups</h2>
 <p>If you choose <em>Settings &rarr; Backup &amp; restore &rarr; Export backup</em>, Life Locker
 writes a single password-protected <code>.llbackup</code> file, encrypted with AES-256-GCM, to a
-location <em>you</em> select.</p>
+location <em>you</em> select. The encryption key is derived from your backup password with
+PBKDF2-HMAC-SHA256 (600,000 rounds), so guessing the password is slow even for someone who has the
+file. If a backup can't be completed, Life Locker deletes the partial file rather than leave an
+incomplete copy behind.</p>
 <p>Once exported, that file is under your control and subject to the privacy and security
 practices of wherever you choose to store or share it — cloud storage, messaging apps, email, or
 external storage. Life Locker cannot read the file back without the password you set, and neither
@@ -270,7 +281,8 @@ is never transmitted anywhere.</p>
 <h2>Permissions</h2>
 <p><strong>Notifications (optional).</strong> Life Locker may ask permission to show
 notifications, used only for local, on-device reminders — for example, that a document in your
-vault is approaching its expiry date. No notification data is transmitted anywhere.</p>
+vault is approaching its expiry date. On a locked screen these show only a general message,
+without the document's or reminder's name. No notification data is transmitted anywhere.</p>
 <p><strong>Autofill (optional, off by default).</strong> You may turn on Life Locker as an Autofill
 service through Android's own system settings, so it can offer a saved login in other apps — see
 Password Manager and Autofill above. Nothing about this requires a special Android permission, and
