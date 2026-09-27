@@ -57,7 +57,7 @@
   <div class="tagline">SECURE, ORGANIZE, INHERIT</div>
 </div>
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: 26 September 2026</p>
+<p class="updated">Last updated: 27 September 2026</p>
 
 <p>Life Locker is a completely offline document vault for Android, designed to help individuals
 and families securely preserve important information, organize personal records, and pass
@@ -96,12 +96,15 @@ technically incapable of transmitting information off your device over a network
   <li>Family tree records</li>
   <li>Categories and folders</li>
   <li>Tags and other metadata</li>
-  <li>Asset information and declared values</li>
+  <li>Asset information and declared values, and details you add to a document (such as an ID
+  number, a policy's sum assured, a loan's outstanding amount, or where the original is kept)</li>
   <li>Expiry dates</li>
-  <li>Notes and checklists</li>
+  <li>Notes and checklists, contacts (such as your family doctor's phone number), and records (such
+  as a fixed deposit, loan, insurance policy, investment, or Will)</li>
   <li>Standalone reminders (birthdays, anniversaries, and one-off dates)</li>
-  <li>Saved logins (site name, username, password, an optional transaction password and PIN, URL, and
-  notes) for the optional Password Manager</li>
+  <li>Saved credentials for the optional Credential Manager: logins (site name, username, password,
+  an optional transaction password and PIN, URL, and notes), cards, lockers and bank accounts,
+  any extra fields you add to them, and a login's previous password after you change it</li>
   <li>Application preferences, such as your chosen theme</li>
 </ul>
 <p>All of it remains encrypted and stored only on your device, inside Life Locker's private app
@@ -141,8 +144,9 @@ camera permission directly.</p>
 
 <h2>Search</h2>
 <p>Life Locker can search across document titles, tags, categories, and people already in your
-vault, and across your notes, reminders, and saved logins (by site name, username, and address;
-never by the password itself). Every search runs live, entirely on your device, against your
+vault, and across your notes, reminders, and saved credentials (by name, username, address, and
+the names and plain-text values of extra fields; never by a password, PIN, or any hidden value).
+A document's ID number is matched only by its last four characters. Every search runs live, entirely on your device, against your
 existing encrypted data — nothing is transmitted or shared.</p>
 
 <h2>Expiry tracking</h2>
@@ -151,10 +155,15 @@ certificates. Expiry calculations and reminders are performed entirely on your d
 expiry information is transmitted anywhere.</p>
 
 <h2>Notes</h2>
-<p>You may create text or checklist notes, optionally linking one to a person or a document
-already in your vault (for example, a note about where a physical original is kept). Notes are
-encrypted and stored only on your device. An optional one-time reminder for a note is scheduled
-and delivered entirely on-device, the same as expiry reminders below.</p>
+<p>You may create text or checklist notes, contacts, and records, optionally linking one to a
+person or a document already in your vault (for example, a note about where a physical original is
+kept). Notes are encrypted and stored only on your device. An optional one-time reminder for a note
+is scheduled and delivered entirely on-device, the same as expiry reminders below.</p>
+<p>When you add a contact, you can <strong>pick someone from your phone's contacts</strong>. This
+uses Android's own contact picker: Life Locker receives only the one contact you pick (its name and
+phone number), for that moment only, and does not ask for access to your contacts. A contact's
+<strong>Call</strong> button opens your phone's dialer with the number filled in; Life Locker
+itself makes no calls.</p>
 
 <h2>Reminders</h2>
 <p>Alongside expiry tracking, Life Locker lets you record standalone reminders for birthdays,
@@ -165,6 +174,26 @@ reminder information is transmitted anywhere.</p>
 <p>The Asset Register lets you keep records of valuables and important assets, including
 supporting documents and declared values. All of it is encrypted and stored only on your
 device.</p>
+<p>Amounts are shown in a currency that Life Locker picks from your SIM card's country, or your
+phone's region if there's no SIM, unless you choose one in Settings. It reads only the country
+code, on your device, with no permission; it is never stored elsewhere or sent anywhere.</p>
+
+<h2>Family summary</h2>
+<p>You can print, or save as a PDF, a family summary: a list of your family's documents, contacts,
+records and assets, and where the originals are kept, ending with your own note on how to open
+the vault. It lists names, owners, folders and dates, never the files themselves. Credentials are
+included only if you turn that on each time, and a login's previous password is never
+included.</p>
+<ul>
+  <li>Printing or saving the summary asks for your PIN or fingerprint first.</li>
+  <li><strong>Once printed or saved, the summary is not encrypted.</strong> Keep the paper or file
+    somewhere safe.</li>
+  <li>Printing uses Android's own print service and the printer you pick. The copy made for
+    printing is deleted when the print dialog closes.</li>
+  <li>Saving writes the file only where you choose.</li>
+  <li>Your "how to open the vault" note is stored encrypted on your device and is not included in
+    backups.</li>
+</ul>
 
 <h2>Photo Bank</h2>
 <p>The Photo Bank stores versioned personal photographs for the three purposes it's built for:</p>
@@ -186,23 +215,30 @@ ships inside the app itself, and is off unless you turn it on. The resized image
 entry; nothing is uploaded anywhere by this feature itself — you choose separately whether and
 where to share the result.</p>
 
-<h2>Password Manager and Autofill</h2>
-<p>Life Locker includes an optional Password Manager for saving logins (site name, username,
+<h2>Credential Manager and Autofill</h2>
+<p>Life Locker includes an optional Credential Manager for saving logins (site name, username,
 password, an optional transaction password and PIN — useful for accounts like bank logins that
-split these into separate secrets, URL, and notes), a password generator, and integration with
-Android's own Autofill framework so a saved login can be offered when you sign in to another app
-or website.</p>
+split these into separate secrets, URL, and notes), as well as cards, bank lockers and bank
+accounts. Any entry can hold extra fields you name yourself, such as a card number, CVV, locker
+code or UPI PIN. When a login's password changes, the one before it is kept, with the date it was
+replaced. It also has a password generator, and integration with Android's own Autofill framework
+so a saved login can be offered when you sign in to another app or website.</p>
 <ul>
-  <li>Saved logins are stored in your encrypted, on-device vault, the same as every other kind of
+  <li>Saved credentials are stored in your encrypted, on-device vault, the same as every other kind of
     record in Life Locker, and are never transmitted anywhere.</li>
   <li><strong>Filling</strong> a saved password always requires a fresh PIN or biometric check at
     the moment of use — being unlocked elsewhere in the app, or the phone itself being unlocked,
-    is never enough on its own.</li>
+    is never enough on its own. The same applies when you use "Choose another field…" to fill a
+    different saved value, such as a transaction password; only the names of the fields are shown
+    before that check.</li>
   <li><strong>Saving</strong> a new login you type into another app works the same way Android's
     own "Save password?" prompt does in any password manager, and stores it the same way as
     above.</li>
-  <li><strong>Showing</strong> a saved password, transaction password, or PIN on screen, including
-    while editing a login, also requires a PIN or biometric check.</li>
+  <li><strong>Showing</strong> a saved password, transaction password, PIN, previous password, or
+    any hidden extra field on screen, including while editing, also requires a PIN or biometric
+    check. In an entry's details, only one is shown at a time and it hides itself again after 30
+    seconds (10 for a PIN). A card or account number is shown as its last four digits until
+    revealed.</li>
   <li><strong>Copying</strong> a password marks it as sensitive, so Android hides it from clipboard
     previews and keyboard clipboard history, and Life Locker clears it from the clipboard after 45
     seconds unless you've copied something else since.</li>
@@ -254,7 +290,7 @@ can we.</p>
 Encryption keys never leave your device, so there is no password-recovery service to offer.
 Please keep your PIN and any backup password somewhere safe.</p>
 
-<h2>Free trial for Password Manager and Resize for upload</h2>
+<h2>Free trial for Credential Manager and Resize for upload</h2>
 <p>These two features are free to use for a limited time from the first time you open Life Locker
 on your device, after which they fold into the same one-time purchase described below. To
 determine when that trial period began, Life Locker uses the earlier of two dates, both kept on
@@ -270,8 +306,8 @@ which case it's covered by the same protections described under Backups above.</
 
 <h2>Purchases</h2>
 <p>The optional one-time "Unlock Unlimited" purchase is processed entirely by Google Play Billing.
-Life Locker never receives or stores your credit card information, banking details, or payment
-credentials. Google's handling of the transaction itself is covered by the
+Life Locker never receives your credit card information, banking details, or payment credentials
+from this purchase. Google's handling of the transaction itself is covered by the
 <a href="https://payments.google.com/legaldocument?family=0.privacynotice&amp;hl=en">Google
 Payments Privacy Notice</a>.</p>
 <p>The only purchase-related information Life Locker stores is an encrypted Google Play purchase
@@ -285,7 +321,7 @@ vault is approaching its expiry date. On a locked screen these show only a gener
 without the document's or reminder's name. No notification data is transmitted anywhere.</p>
 <p><strong>Autofill (optional, off by default).</strong> You may turn on Life Locker as an Autofill
 service through Android's own system settings, so it can offer a saved login in other apps — see
-Password Manager and Autofill above. Nothing about this requires a special Android permission, and
+Credential Manager and Autofill above. Nothing about this requires a special Android permission, and
 it stays off until you turn it on yourself.</p>
 <p><strong>Not requested:</strong> internet access, location access, contacts access, camera
 access (see Document Scanning above), advertising identifiers, storage access, or background
