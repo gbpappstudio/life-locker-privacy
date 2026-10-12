@@ -57,7 +57,7 @@
   <div class="tagline">SECURE, ORGANIZE, INHERIT</div>
 </div>
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: 28 September 2026</p>
+<p class="updated">Last updated: 12 October 2026</p>
 
 <p>Life Locker is an app for keeping your family's important documents, photos and records on your Android phone. This page explains what happens to that information, in plain words.</p>
 
@@ -66,7 +66,7 @@
   <li>Everything you put in Life Locker stays <strong>on your phone</strong>, locked and encrypted.</li>
   <li><strong>We never see it.</strong> There is no account, no advertising, no tracking and no analytics.</li>
   <li>Life Locker <strong>has no internet access at all.</strong> Android doesn't give it permission to go online, so it can't send anything anywhere.</li>
-  <li>Your information leaves the phone <strong>only when you choose</strong>: when you make a backup, share a document, print, or fill in a password in another app.</li>
+  <li>Your information leaves the phone <strong>only when you choose</strong>: when you make a backup, share a document, print, save a copy outside the app, open a saved web link, or fill in a password in another app.</li>
 </ul>
 
 <h2>What we collect</h2>
@@ -78,9 +78,10 @@
   <li>documents, scans and photos (including Photo Bank photos and signatures)</li>
   <li>the people in your family and your family tree (names, dates, relationships, photos)</li>
   <li>folders, notes, contacts, records, reminders and expiry dates</li>
+  <li>web links you save (a name and a web address) and which documents you've marked as related</li>
   <li>your valuables and document details (for example an ID number, a policy amount, or where the original is kept)</li>
   <li>passwords, cards and other entries you save in the Credential Manager</li>
-  <li>your settings, such as the theme</li>
+  <li>your settings, such as the theme and the order each folder is sorted in</li>
 </ul>
 <p>All of it is <strong>encrypted</strong> and kept in Life Locker's private storage, which other apps can't read.</p>
 
@@ -90,6 +91,7 @@
   <li><strong>Encryption.</strong> The database is encrypted with AES-256 (SQLCipher), and every file with its own AES-256-GCM key. Those keys are protected by your phone's secure hardware (Android Keystore) and never leave the phone.</li>
   <li><strong>Extra checks for secrets.</strong> Showing, copying or filling a saved password, PIN or hidden field asks for your PIN or fingerprint first. A copied password is hidden from clipboard previews and cleared after 45 seconds.</li>
   <li><strong>Screenshots are blocked</strong> unless you allow them in Settings.</li>
+  <li><strong>Hidden from other apps' screen reading.</strong> On Android 14 and later, the PIN screen and a password you reveal are hidden from accessibility apps that aren't screen readers, so they can't read them. Screen readers such as TalkBack still work.</li>
   <li><strong>No recovery.</strong> Because only your phone holds the keys, nobody (including us) can reset your PIN or open your vault for you. If you forget your PIN and have no backup, the vault can't be opened. Please keep a backup.</li>
 </ul>
 
@@ -98,6 +100,10 @@
 <p><strong>Backups.</strong> "Export backup" saves one file (<code>.llbackup</code>) wherever you choose. It is encrypted with a password you set, and can't be opened without that password.</p>
 <p><strong>Automatic backup (optional, off until you turn it on).</strong> Once a week, Life Locker saves a new encrypted backup file to a folder you pick, but only if something has changed. It keeps the newest three and deletes older ones it made. So that it can run on its own, your backup password is kept on your phone, encrypted. If the folder you pick is synced by another app (for example Google Drive), <strong>that app</strong> uploads the encrypted file. Life Locker itself still never goes online.</p>
 <p><strong>Sharing and "Open with".</strong> When you share a document or open it in another app, that app receives a readable copy, because it needs to show it. From then on, that app's own privacy policy applies. Life Locker's temporary copy is deleted soon after.</p>
+<p><strong>Web links.</strong> A web link is kept in your vault like a document: just its name and address, encrypted. Life Locker never opens, downloads or checks the page itself. When you tap a link, Life Locker hands the address to your browser (the first time, it tells you the link opens outside the app); the visit is then between you, your browser and that website, and their privacy policies apply. When you share a page from your browser to Life Locker, only its address is saved. "Copy address" and "Share" send the address only where you choose.</p>
+
+<p><strong>Combine into one PDF.</strong> Joining files into one PDF happens entirely on your phone. The result is saved in your vault, encrypted, unless you choose <strong>On this device</strong>, which saves a copy outside Life Locker (it is <strong>not encrypted</strong> unless you protect it with a password), or <strong>Share</strong>, which sends a copy to the app you pick.</p>
+
 <p><strong>Printing and PDFs.</strong> A family summary, claim report or family tree you print or save as a PDF is <strong>not encrypted</strong>, so keep it somewhere safe. The family summary asks for your PIN first, and only includes passwords if you switch that on each time. Printing uses Android's print service and the printer you choose.</p>
 <p><strong>Autofill (optional, off until you turn it on in Android's settings).</strong> Life Locker can fill a saved login into another app or website, after your PIN or fingerprint every time. Choosing which login fits is done on your phone.</p>
 <p>Life Locker is <strong>left out of Android's own Google backup</strong> and phone-to-phone transfer, so your vault is never copied that way. A <code>.llbackup</code> file is the only way to move it.</p>
@@ -112,6 +118,7 @@
 <h2>Other things the app reads</h2>
 <ul>
   <li><strong>One contact, if you pick one.</strong> When you add a contact to a note, Android's contact picker gives Life Locker only the one contact you choose. Life Locker can't see your other contacts.</li>
+  <li><strong>Whether the date and time are set automatically</strong>, for the free trial (see below). Life Locker only reads the setting; it doesn't change it.</li>
   <li><strong>Your country, for currency.</strong> To choose a currency for your valuables, Life Locker reads the country code of your SIM card or phone region. It stays on your phone. You can change the currency in Settings.</li>
 </ul>
 
@@ -129,7 +136,7 @@
 
 <h2>Purchases and free trial</h2>
 <p>The one-time <strong>Unlock Unlimited</strong> purchase is handled by Google Play. We never see your card or bank details. Google's <a href="https://payments.google.com/legaldocument?family=0.privacynotice&amp;hl=en">payments privacy notice</a> applies to the payment. Life Locker keeps only the Google Play receipt, encrypted on your phone, to confirm the purchase.</p>
-<p>The Credential Manager and "Resize for upload" are free for 90 days from the first time you open the app. That start date is kept on your phone and inside your backups, so restoring a backup doesn't restart the trial.</p>
+<p>The Credential Manager, "Resize for upload" and "Combine into one PDF" are free for 90 days, counted from the first time you open the app or from 15 October 2026, whichever is later. That start date is kept on your phone and inside your backups, so restoring a backup doesn't restart the trial. The trial counts only while your phone sets its date and time automatically; if the clock is set by hand, the trial pauses until automatic time is back on. All of this is worked out on your phone.</p>
 
 <h2>Information about other people</h2>
 <p>Your vault may hold information about family members, such as their documents or dates in the family tree. It is protected the same way as everything else and never reaches us. Please make sure you're allowed to keep that information.</p>
