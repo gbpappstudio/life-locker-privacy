@@ -57,7 +57,7 @@
   <div class="tagline">SECURE, ORGANIZE, INHERIT</div>
 </div>
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: 22 October 2026</p>
+<p class="updated">Last updated: 27 October 2026</p>
 
 <p>Life Locker is an app for keeping your family's important documents, photos and records on your Android phone. This page explains what happens to that information, in plain words.</p>
 
@@ -66,7 +66,7 @@
   <li>Everything you put in Life Locker stays <strong>on your phone</strong>, locked and encrypted.</li>
   <li><strong>We never see it.</strong> There is no account, no advertising, no tracking and no analytics.</li>
   <li>Life Locker <strong>has no internet access at all.</strong> Android doesn't give it permission to go online, so it can't send anything anywhere.</li>
-  <li>Your information leaves the phone <strong>only when you choose</strong>: when you make a backup, share a document, print, save a copy outside the app, open a saved web link, or fill in a password in another app.</li>
+  <li>Your information leaves the phone <strong>only when you choose</strong>: when you make a backup, share a document or a contact, print, save a copy outside the app, open a saved web link or location, or fill in a password in another app.</li>
 </ul>
 
 <h2>What we collect</h2>
@@ -78,12 +78,13 @@
   <li>documents, scans and photos (including Photo Bank photos and signatures)</li>
   <li>the people in your family and your family tree (names, dates, relationships, photos)</li>
   <li>folders, notes, contacts, records, reminders and expiry dates</li>
-  <li>web links you save (a name and a web address) and which documents you've marked as related</li>
+  <li>web links and Google Maps locations you save (a name and an address) and which documents you've marked as related</li>
+  <li>visiting cards you scan: the picture of the card and the details read from it</li>
   <li>your valuables and document details (for example an ID number, a policy amount, or where the original is kept)</li>
   <li>passwords, cards and other entries you save in the Credential Manager</li>
   <li>your settings, such as the theme and the order each folder is sorted in</li>
 </ul>
-<p>All of it is <strong>encrypted</strong> and kept in Life Locker's private storage, which other apps can't read.</p>
+<p>All of it is <strong>encrypted</strong> and kept in Life Locker's private storage, which other apps can't read. A few plain settings, such as the theme or which folders are hidden for whom, are kept in that private storage without encryption; they hold no documents or personal details.</p>
 
 <h2>How it's protected</h2>
 <ul>
@@ -91,7 +92,7 @@
   <li><strong>Encryption.</strong> The database is encrypted with AES-256 (SQLCipher), and every file with its own AES-256-GCM key. Those keys are protected by your phone's secure hardware (Android Keystore) and never leave the phone.</li>
   <li><strong>Extra checks for secrets.</strong> Showing, copying or filling a saved password, PIN or hidden field asks for your PIN or fingerprint first. A copied password is hidden from clipboard previews and cleared after about 30 seconds, or within about a minute if Android has closed the app.</li>
   <li><strong>Screenshots are blocked</strong> unless you allow them in Settings.</li>
-  <li><strong>Hidden from other apps' screen reading.</strong> On Android 14 and later, the PIN screen and a password you reveal are hidden from accessibility apps that aren't screen readers, so they can't read them. Screen readers such as TalkBack still work.</li>
+  <li><strong>Hidden from other apps' screen reading.</strong> On Android 14 and later, screens where you type a PIN or password, and anything secret you reveal (a password, a PDF's password, an ID number), are hidden from accessibility apps that aren't screen readers, so they can't read them. Screen readers such as TalkBack still work.</li>
   <li><strong>No recovery.</strong> Because only your phone holds the keys, nobody (including us) can reset your PIN or open your vault for you. If you forget your PIN and have no backup, the vault can't be opened. Please keep a backup.</li>
 </ul>
 
@@ -100,7 +101,9 @@
 <p><strong>Backups.</strong> "Export backup" saves one file (<code>.llbackup</code>) wherever you choose. It is encrypted with a password you set, and can't be opened without that password.</p>
 <p><strong>Automatic backup (optional, off until you turn it on).</strong> Once a week, Life Locker saves a new encrypted backup file to a folder you pick, but only if something has changed. It keeps the newest three and deletes older ones it made. So that it can run on its own, your backup password is kept on your phone, encrypted. If the folder you pick is synced by another app (for example Google Drive), <strong>that app</strong> uploads the encrypted file. Life Locker itself still never goes online.</p>
 <p><strong>Sharing and "Open with".</strong> When you share a document or open it in another app, that app receives a readable copy, because it needs to show it. From then on, that app's own privacy policy applies. Life Locker's temporary copy is deleted soon after.</p>
-<p><strong>Web links.</strong> A web link is kept in your vault like a document: just its name and address, encrypted. Life Locker never opens, downloads or checks the page itself. When you tap a link, Life Locker hands the address to your browser (the first time, it tells you the link opens outside the app); the visit is then between you, your browser and that website, and their privacy policies apply. When you share a page from your browser to Life Locker, only its address is saved. "Copy address" and "Share" send the address only where you choose.</p>
+<p><strong>Web links.</strong> A web link is kept in your vault like a document: just its name and address, encrypted. Life Locker never opens, downloads or checks the page itself. When you tap a link, Life Locker hands the address to your browser (the first time, it tells you the link opens outside the app); the visit is then between you, your browser and that website, and their privacy policies apply. A Google Maps location is a link like any other: Life Locker shows no map and never looks up the place; tapping it opens Google Maps. When you share a page or a location to Life Locker, only its name and address are saved. "Copy address" and "Share" send the address only where you choose.</p>
+
+<p><strong>Contacts.</strong> "Share contact" sends a contact card (<code>.vcf</code>) to the app you pick. It holds the name and the details on the card, never the contact's notes or picture. "Save to phone contacts" opens Android's own Contacts screen, filled in; nothing is saved there unless you save it. A contact card shared to Life Locker from another app becomes a new contact, kept encrypted.</p>
 
 <p><strong>Combine into one PDF.</strong> Joining files into one PDF happens entirely on your phone. The result is saved in your vault, encrypted, unless you choose <strong>On this device</strong>, which saves a copy outside Life Locker (it is <strong>not encrypted</strong> unless you protect it with a password), or <strong>Share</strong>, which sends a copy to the app you pick.</p>
 
@@ -112,8 +115,9 @@
 <ul>
   <li><strong>Document scanner.</strong> Scanning uses Google Play services' document scanner, which handles the camera itself; Life Locker doesn't ask for camera permission.</li>
   <li><strong>Face finding in "Resize for upload".</strong> To place the head correctly on a passport-size photo, Life Locker uses Google Play services' face detection.</li>
+  <li><strong>Reading visiting cards.</strong> To fill in a contact from a scanned card, Life Locker uses Google Play services' text recognition.</li>
 </ul>
-<p>Both run on your phone. Your documents and photos are not sent anywhere. These are Google's components and follow <a href="https://policies.google.com/privacy">Google's privacy policy</a>. The optional "Remove background" tool uses a model built into Life Locker, also on your phone.</p>
+<p>All of these run on your phone. Your documents and photos are not sent anywhere. These are Google's components and follow <a href="https://policies.google.com/privacy">Google's privacy policy</a>. The optional "Remove background" tool uses a model built into Life Locker, also on your phone.</p>
 
 <h2>Other things the app reads</h2>
 <ul>
