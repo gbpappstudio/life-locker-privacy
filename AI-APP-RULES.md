@@ -1,4 +1,4 @@
-# Rules for apps that call an AI model (draft v3)
+# Rules for apps that call an AI model (draft v6)
 
 Read only when building or changing code that talks to an AI model.
 
