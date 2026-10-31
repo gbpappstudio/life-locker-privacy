@@ -4,7 +4,7 @@ Copy into any project as `docs/TOKEN-RULES.md` and add one line to its CLAUDE.md
 `- Token rules (follow always): docs/TOKEN-RULES.md`
 User tips: `docs/TOKEN-TIPS-USER.md`. Rules for apps that call an AI model: `docs/AI-APP-RULES.md`.
 
-## Top 10 (proposed, to confirm)
+## Top 10
 1. Start from `docs/STATUS.md`; search, then read only the lines you need.
 2. Never read generated or bulky files; keep command and tool output short.
 3. Ask the user when unclear or when something can't be found. Never dig through old chats.
