@@ -1,8 +1,8 @@
-# Token-saving rules (draft v4)
+# Token-saving rules (draft v5)
 
 Copy into any project as `docs/TOKEN-RULES.md` and add one line to its CLAUDE.md:
 `- Token rules (follow always): docs/TOKEN-RULES.md`
-User tips: `docs/TOKEN-TIPS-USER.md`. Rules for apps that call an AI model: `docs/AI-APP-RULES.md`.
+User tips: `docs/TOKEN-TIPS-USER.md`. One-time setup and templates: `docs/TOKEN-SETUP.md`. Rules for apps that call an AI model: `docs/AI-APP-RULES.md`.
 
 ## Top 10
 1. Start from `docs/STATUS.md`; search, then read only the lines you need.
@@ -31,12 +31,15 @@ User tips: `docs/TOKEN-TIPS-USER.md`. Rules for apps that call an AI model: `doc
 10. Keep source files under ~300 lines, one feature per file.
 11. Keep CLAUDE.md under ~30 lines and feature docs under ~80. Details go in `docs/`.
 12. Update `docs/STATUS.md` in place; no long history.
+41. Cost log: after each stage, add one line to STATUS.md with its rough cost where the session shows it (e.g. "Stage D: ~$6"). Use it to keep rules that help and drop ones that don't.
 31. Don't re-open a file just to check what you wrote; the write tool already confirms it. CI does the checking.
 32. Name tests so a failure explains itself from one line (e.g. `testMoveRefusesSystemFolder`).
-33. Use the fill-in templates below for feature docs and stage notes.
+33. Use the fill-in templates in `docs/TOKEN-SETUP.md` for feature docs and stage notes.
 
 ## Working
 13. Ask before building when anything is unclear. One question costs less than redoing work.
+39. Ask all open questions in one go, not one round at a time; each round resends the whole conversation.
+40. Research cap: at most 3 web searches per question, then decide or ask the user.
 14. Spec before code: a short feature doc (what, edge cases, "done when…") agreed with the user.
 15. Turn each "done when" into an automatic test, so CI checks it instead of Claude.
 16. Review only the diff, not whole files.
@@ -62,25 +65,6 @@ User tips: `docs/TOKEN-TIPS-USER.md`. Rules for apps that call an AI model: `doc
 ## Testing
 27. Prefer automatic tests in CI: they cost zero AI tokens.
 28. Test pure logic without launching the app.
+42. CI skips doc-only changes (`.md` files): no build to wait for or check.
 29. On CI failure print only failing lines; keep the full log as a downloadable artifact.
 30. Real-world checks (voice, permissions, sign-ins, hardware) are done by the user on the device.
-
-## Automatic setup (once per project; works without anyone remembering)
-35. Session-start hook: print the "In progress / next" lines from STATUS.md and the last 5 commits, so each session starts up to date without exploring.
-36. Settings deny-list: block reading build output, IDE/project files, lock files, images and logs.
-37. Auto-formatter in CI: fixes indentation and style, so no turns are spent tidying.
-38. CI builds `docs/MAP.md`: one line per source file saying what it does. Search the map before opening files.
-
-## Templates
-Feature doc:
-```
-# <Feature>
-What: <one line>
-Edge cases: <bullets>
-Done when: <bullets, each one an automatic test where possible>
-```
-Stage note (in STATUS.md):
-```
-In progress: <stage> — <what's done>
-Next: <one line>
-```
