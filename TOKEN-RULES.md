@@ -1,4 +1,4 @@
-# Token-saving rules (draft v3)
+# Token-saving rules (draft v4)
 
 Copy into any project as `docs/TOKEN-RULES.md` and add one line to its CLAUDE.md:
 `- Token rules (follow always): docs/TOKEN-RULES.md`
@@ -31,6 +31,9 @@ User tips: `docs/TOKEN-TIPS-USER.md`. Rules for apps that call an AI model: `doc
 10. Keep source files under ~300 lines, one feature per file.
 11. Keep CLAUDE.md under ~30 lines and feature docs under ~80. Details go in `docs/`.
 12. Update `docs/STATUS.md` in place; no long history.
+31. Don't re-open a file just to check what you wrote; the write tool already confirms it. CI does the checking.
+32. Name tests so a failure explains itself from one line (e.g. `testMoveRefusesSystemFolder`).
+33. Use the fill-in templates below for feature docs and stage notes.
 
 ## Working
 13. Ask before building when anything is unclear. One question costs less than redoing work.
@@ -45,6 +48,7 @@ User tips: `docs/TOKEN-TIPS-USER.md`. Rules for apps that call an AI model: `doc
     - Design and hard bugs: think deeply, research if needed.
 20. Commit and push after every finished stage, so a usage limit or ended session never loses work.
 21. Before stopping or near a limit, write "In progress: …, next: …" in STATUS.md.
+34. Don't edit CLAUDE.md or switch connectors mid-session: it breaks the prompt cache (cached reads cost about a tenth). Save CLAUDE.md edits for the end of the session.
 22. Run independent steps together; wait for one CI result instead of re-checking in a loop.
 23. One task per session; start fresh for unrelated work and compact after each milestone.
 
@@ -60,3 +64,23 @@ User tips: `docs/TOKEN-TIPS-USER.md`. Rules for apps that call an AI model: `doc
 28. Test pure logic without launching the app.
 29. On CI failure print only failing lines; keep the full log as a downloadable artifact.
 30. Real-world checks (voice, permissions, sign-ins, hardware) are done by the user on the device.
+
+## Automatic setup (once per project; works without anyone remembering)
+35. Session-start hook: print the "In progress / next" lines from STATUS.md and the last 5 commits, so each session starts up to date without exploring.
+36. Settings deny-list: block reading build output, IDE/project files, lock files, images and logs.
+37. Auto-formatter in CI: fixes indentation and style, so no turns are spent tidying.
+38. CI builds `docs/MAP.md`: one line per source file saying what it does. Search the map before opening files.
+
+## Templates
+Feature doc:
+```
+# <Feature>
+What: <one line>
+Edge cases: <bullets>
+Done when: <bullets, each one an automatic test where possible>
+```
+Stage note (in STATUS.md):
+```
+In progress: <stage> — <what's done>
+Next: <one line>
+```
