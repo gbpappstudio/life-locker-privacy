@@ -1,4 +1,4 @@
-# Token tips for the user (draft v6)
+# Token tips for the user (draft v7)
 
 1. Be precise: name the file and the change ("In ProactiveMonitor, change X").
 2. Paste only the error lines, never full logs or whole files.
